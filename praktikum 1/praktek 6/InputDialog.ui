@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InputDialog</class>
+ <widget class="QDialog" name="InputDialog">
+  <property name="windowTitle"><string>Input Data</string></property>
+  <property name="modal"><bool>true</bool></property>
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>300</width><height>160</height></rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label_title">
+     <property name="text"><string>Masukkan Data Diri:</string></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="name_input">
+     <property name="placeholderText"><string>Nama</string></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSpinBox" name="age_input">
+     <property name="minimum"><number>1</number></property>
+     <property name="maximum"><number>100</number></property>
+     <property name="prefix"><string>Umur: </string></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttons">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttons</sender><signal>accepted()</signal>
+   <receiver>InputDialog</receiver><slot>accept()</slot>
+   <hints><hint type="visual"><x>0</x><y>0</y></hint><hint type="visual"><x>0</x><y>0</y></hint></hints>
+  </connection>
+  <connection>
+   <sender>buttons</sender><signal>rejected()</signal>
+   <receiver>InputDialog</receiver><slot>reject()</slot>
+   <hints><hint type="visual"><x>0</x><y>0</y></hint><hint type="visual"><x>0</x><y>0</y></hint></hints>
+  </connection>
+ </connections>
+</ui>
