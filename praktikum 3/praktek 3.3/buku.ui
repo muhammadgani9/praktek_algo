@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LibrarySystem</class>
+ <widget class="QMainWindow" name="LibrarySystem">
+  <property name="geometry">
+   <rect>
+    <x>300</x>
+    <y>300</y>
+    <width>900</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sistem Peminjaman Buku</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_main">
+    <item>
+     <widget class="QTabWidget" name="tabs">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+
+      <!-- TAB 1: KELOLA BUKU -->
+      <widget class="QWidget" name="books_tab">
+       <attribute name="title">
+        <string>Kelola Buku</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="books_layout">
+        <item>
+         <layout class="QGridLayout" name="form_layout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_title">
+            <property name="text">
+             <string>Judul:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="title_input"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_author">
+            <property name="text">
+             <string>Penulis:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="author_input"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_stock">
+            <property name="text">
+             <string>Stok:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="stock_input">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="btn_layout">
+          <item>
+           <widget class="QPushButton" name="add_book_btn">
+            <property name="text">
+             <string>Tambah Buku</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="update_book_btn">
+            <property name="text">
+             <string>Update Buku</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="delete_book_btn">
+            <property name="text">
+             <string>Hapus Buku</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableView" name="book_table">
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- TAB 2: PINJAM BUKU -->
+      <widget class="QWidget" name="borrow_tab">
+       <attribute name="title">
+        <string>Pinjam Buku</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="borrow_layout">
+        <item>
+         <widget class="QLabel" name="label_pick_book">
+          <property name="text">
+           <string>Pilih Buku:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="book_combo"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_borrower">
+          <property name="text">
+           <string>Nama Peminjam:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="borrower_input"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="borrow_btn">
+          <property name="text">
+           <string>Pinjam Buku</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="borrow_spacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- TAB 3: KEMBALIKAN BUKU -->
+      <widget class="QWidget" name="return_tab">
+       <attribute name="title">
+        <string>Kembalikan Buku</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="return_layout">
+        <item>
+         <widget class="QLabel" name="label_active_loans">
+          <property name="text">
+           <string>Peminjaman Aktif:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableView" name="loan_table">
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="return_btn">
+          <property name="text">
+           <string>Kembalikan Buku</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- TAB 4: LAPORAN -->
+      <widget class="QWidget" name="reports_tab">
+       <attribute name="title">
+        <string>Laporan</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="reports_layout">
+        <item>
+         <widget class="QLabel" name="stats_label">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="refresh_btn">
+          <property name="text">
+           <string>Refresh Laporan</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
