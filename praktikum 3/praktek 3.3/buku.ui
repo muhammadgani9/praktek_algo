@@ -4,8 +4,8 @@
  <widget class="QMainWindow" name="LibrarySystem">
   <property name="geometry">
    <rect>
-    <x>300</x>
-    <y>300</y>
+    <x>0</x>
+    <y>0</y>
     <width>900</width>
     <height>600</height>
    </rect>
@@ -20,8 +20,6 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-
-      <!-- TAB 1: KELOLA BUKU -->
       <widget class="QWidget" name="books_tab">
        <attribute name="title">
         <string>Kelola Buku</string>
@@ -102,8 +100,6 @@
         </item>
        </layout>
       </widget>
-
-      <!-- TAB 2: PINJAM BUKU -->
       <widget class="QWidget" name="borrow_tab">
        <attribute name="title">
         <string>Pinjam Buku</string>
@@ -151,8 +147,6 @@
         </item>
        </layout>
       </widget>
-
-      <!-- TAB 3: KEMBALIKAN BUKU -->
       <widget class="QWidget" name="return_tab">
        <attribute name="title">
         <string>Kembalikan Buku</string>
@@ -181,8 +175,6 @@
         </item>
        </layout>
       </widget>
-
-      <!-- TAB 4: LAPORAN -->
       <widget class="QWidget" name="reports_tab">
        <attribute name="title">
         <string>Laporan</string>
@@ -207,7 +199,6 @@
         </item>
        </layout>
       </widget>
-
      </widget>
     </item>
    </layout>
