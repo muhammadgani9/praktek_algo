@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormPeminjaman</class>
+ <widget class="QWidget" name="FormPeminjaman">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>560</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Perpustakaan - Form Peminjaman Buku</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#FormPeminjaman { background-color: #f5f5f5; }
+QLabel { color: #2c3e50; }
+QLineEdit, QComboBox, QDateEdit, QSpinBox {
+    background-color: white;
+    border: 1px solid #cfd4d9;
+    border-radius: 4px;
+    padding: 4px 6px;
+    min-height: 24px;
+}
+QFrame#frameForm, QFrame#frameTabel {
+    border: 1px solid #e57373;
+    background-color: #f5f5f5;
+}
+QFrame#frameForm QLabel, QFrame#frameTabel QLabel { border: none; }
+QPushButton {
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    padding: 8px;
+}
+QPushButton#btnPinjam { background-color: #2e86c1; }
+QPushButton#btnPinjam:hover { background-color: #3498db; }
+QPushButton#btnBersihkan { background-color: #34495e; }
+QPushButton#btnBersihkan:hover { background-color: #455a73; }
+QPushButton#btnKembali { background-color: #34495e; }
+QPushButton#btnKembali:hover { background-color: #455a73; }
+QHeaderView::section {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    font-weight: bold;
+    border: 1px solid #d5d8dc;
+    padding: 6px;
+}
+QTableWidget {
+    background-color: white;
+    border: 1px solid #d5d8dc;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayoutUtama">
+   <property name="spacing">
+    <number>12</number>
+   </property>
+   <property name="leftMargin">
+    <number>20</number>
+   </property>
+   <property name="topMargin">
+    <number>15</number>
+   </property>
+   <property name="rightMargin">
+    <number>20</number>
+   </property>
+   <property name="bottomMargin">
+    <number>15</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="labelJudul">
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>📘 FORM PEMINJAMAN BUKU</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayoutIsi">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <item>
+      <widget class="QFrame" name="frameForm">
+       <property name="minimumSize">
+        <size>
+         <width>320</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>330</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayoutForm">
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <item>
+         <layout class="QFormLayout" name="formLayout">
+          <property name="horizontalSpacing">
+           <number>10</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>12</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelIdPinjam">
+            <property name="text">
+             <string>ID Pinjam:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="txtIdPinjam">
+            <property name="placeholderText">
+             <string>Contoh: PJ001</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="labelNamaPeminjam">
+            <property name="text">
+             <string>Nama Peminjam:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="txtNamaPeminjam"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="labelPilihBuku">
+            <property name="text">
+             <string>Pilih Buku:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="cmbBuku"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="labelTanggalPinjam">
+            <property name="text">
+             <string>Tanggal Pinjam:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QDateEdit" name="datePinjam">
+            <property name="displayFormat">
+             <string>d/M/yyyy</string>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+            <property name="date">
+             <date>
+              <year>2000</year>
+              <month>1</month>
+              <day>1</day>
+             </date>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="labelDurasi">
+            <property name="text">
+             <string>Durasi (Hari):</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QSpinBox" name="spinDurasi">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>365</number>
+            </property>
+            <property name="value">
+             <number>7</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacerAtas">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>10</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutTombol">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="btnPinjam">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Pinjam Buku</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnBersihkan">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(28, 41, 130);
+color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string>Bersihkan</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacerBawah">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frameTabel">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayoutTabel">
+        <property name="spacing">
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="labelDaftarBuku">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>📖 Daftar Buku Sedang Dipinjam (Aktif)</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableWidgetPinjam">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>false</bool>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID Pinjam</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nama Peminjam</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>ID Buku</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Judul Buku</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnKembali">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>36</height>
+      </size>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(28, 41, 130);
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>⏎ Kembali ke Menu Utama</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>txtIdPinjam</tabstop>
+  <tabstop>txtNamaPeminjam</tabstop>
+  <tabstop>cmbBuku</tabstop>
+  <tabstop>datePinjam</tabstop>
+  <tabstop>spinDurasi</tabstop>
+  <tabstop>btnPinjam</tabstop>
+  <tabstop>btnBersihkan</tabstop>
+  <tabstop>tableWidgetPinjam</tabstop>
+  <tabstop>btnKembali</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
